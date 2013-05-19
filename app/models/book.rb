@@ -10,7 +10,7 @@ class Book
       $redis.setex(key, Settings.redis.ttl, Marshal.dump(result))
     end
     # Format of result
-    # [collections, total_amount]
+    # [collections, total_items]
     result
   end
 end
