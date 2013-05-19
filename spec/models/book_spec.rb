@@ -4,10 +4,13 @@ describe Book do
 
   describe 'search', vcr: {cassette_name: 'Book'} do
 
+    let(:query) { 'The Great Gatsby' }
+
     let(:books) do 
-      query = 'The Great Gatsby'
       Book.search(query) { GoogleBooks.search(query, { page: 1 }) }
     end
+
+    after(:each) { $redis.keys.each { |k| $redis.del k } }
 
     it 'returns array' do
       books.should be_an(Array)
@@ -32,6 +35,12 @@ describe Book do
 
     it "returns page count" do
       books.first.page_count.should == 154
+    end
+
+    it "should use cache" do
+      books # to initialize the books variable
+      GoogleBooks.should_not_receive(:search)
+      Book.search(query)
     end
   end
 end
