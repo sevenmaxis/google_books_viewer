@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @query, page = params[:query], params[:page]
-    page = 1 unless page
+    page = page ? page.to_i : 1
 
     @books, @total = Book.search(@query, page) do
       GoogleBooks.search(@query, { page: page })
