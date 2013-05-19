@@ -1,0 +1,196 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/books/v1/volumes?maxResults=5&q=The%20Great%20Gatsby&startIndex=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sun, 19 May 2013 14:41:47 GMT
+      Date:
+      - Sun, 19 May 2013 14:41:47 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - ! '"I09ELXbrmOlE-RFCkDsRbIJj278/ECGiC7a5SFChhQf9q8yXJZUgQIU"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{\n \"kind\": \"books#volumes\",\n \"totalItems\": 523,\n \"items\":
+        [\n  {\n   \"kind\": \"books#volume\",\n   \"id\": \"JgxOs2GX86AC\",\n   \"etag\":
+        \"/yCJxBfMcDc\",\n   \"selfLink\": \"https://www.googleapis.com/books/v1/volumes/JgxOs2GX86AC\",\n
+        \  \"volumeInfo\": {\n    \"title\": \"The Great Gatsby\",\n    \"authors\":
+        [\n     \"F.Scott Fitzgerald\"\n    ],\n    \"publisher\": \"Interactive Media\",\n
+        \   \"publishedDate\": \"2012-02\",\n    \"description\": \"A social satire
+        and a milestone in 20th century literature, 'The Great Gatsby' peels away
+        the layers of the glamorous twenties in the U.S. to display the coldness and
+        cruelty at its heart.\",\n    \"industryIdentifiers\": [\n     {\n      \"type\":
+        \"ISBN_10\",\n      \"identifier\": \"1907832564\"\n     },\n     {\n      \"type\":
+        \"ISBN_13\",\n      \"identifier\": \"9781907832567\"\n     }\n    ],\n    \"pageCount\":
+        154,\n    \"printType\": \"BOOK\",\n    \"categories\": [\n     \"Fiction\"\n
+        \   ],\n    \"averageRating\": 3.5,\n    \"ratingsCount\": 5670,\n    \"contentVersion\":
+        \"0.1.1.0.preview.3\",\n    \"imageLinks\": {\n     \"smallThumbnail\": \"http://bks2.books.google.com/books?id=JgxOs2GX86AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api\",\n
+        \    \"thumbnail\": \"http://bks2.books.google.com/books?id=JgxOs2GX86AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api\"\n
+        \   },\n    \"language\": \"en\",\n    \"previewLink\": \"http://books.google.com/books?id=JgxOs2GX86AC&printsec=frontcover&dq=The+Great+Gatsby&hl=&cd=1&source=gbs_api\",\n
+        \   \"infoLink\": \"http://books.google.com/books?id=JgxOs2GX86AC&dq=The+Great+Gatsby&hl=&source=gbs_api\",\n
+        \   \"canonicalVolumeLink\": \"http://books.google.com/books/about/The_Great_Gatsby.html?hl=&id=JgxOs2GX86AC\"\n
+        \  },\n   \"saleInfo\": {\n    \"country\": \"UA\",\n    \"saleability\":
+        \"NOT_FOR_SALE\",\n    \"isEbook\": false\n   },\n   \"accessInfo\": {\n    \"country\":
+        \"UA\",\n    \"viewability\": \"PARTIAL\",\n    \"embeddable\": true,\n    \"publicDomain\":
+        false,\n    \"textToSpeechPermission\": \"ALLOWED\",\n    \"epub\": {\n     \"isAvailable\":
+        true,\n     \"acsTokenLink\": \"http://books.google.com/books/download/The_Great_Gatsby-sample-epub.acsm?id=JgxOs2GX86AC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api\"\n
+        \   },\n    \"pdf\": {\n     \"isAvailable\": true,\n     \"acsTokenLink\":
+        \"http://books.google.com/books/download/The_Great_Gatsby-sample-pdf.acsm?id=JgxOs2GX86AC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api\"\n
+        \   },\n    \"webReaderLink\": \"http://books.google.com/books/reader?id=JgxOs2GX86AC&hl=&printsec=frontcover&output=reader&source=gbs_api\",\n
+        \   \"accessViewStatus\": \"SAMPLE\"\n   },\n   \"searchInfo\": {\n    \"textSnippet\":
+        \"A social satire and a milestone in 20th century literature, &#39;The Great
+        Gatsby&#39; peels away the layers of the glamorous twenties in the U.S. to
+        display the coldness and cruelty at its heart.\"\n   }\n  },\n  {\n   \"kind\":
+        \"books#volume\",\n   \"id\": \"uKnCIdYDTKAC\",\n   \"etag\": \"DPfJxwaInHs\",\n
+        \  \"selfLink\": \"https://www.googleapis.com/books/v1/volumes/uKnCIdYDTKAC\",\n
+        \  \"volumeInfo\": {\n    \"title\": \"The Great Gatsby & The Diamont as Big
+        as the Ritz\",\n    \"authors\": [\n     \"F. Scott Fitzgerald\"\n    ],\n
+        \   \"publisher\": \"Collector's Library\",\n    \"publishedDate\": \"2005-09-20\",\n
+        \   \"description\": \"In 'The Great Gatsby', Fitzgerald looks deeply into
+        himself and his milieu to create the story of James Gatz, a self-educated
+        nobody from Kentucky who has amassed a fortune and adopted the persona of
+        Jay Gatsby, an Oxford-educated man about town, for the sole purpose of winning
+        back the heart of Daisy, the woman he loved in his youth. Daisy is now married
+        to Tom Buchanan a brutal, ignorant racist who embodies the corruption that
+        can come with unlimited wealth. As Gatsby, Daisy and Tom play out the drama
+        in a small Long Island town, Fitzgerald makes it clear that life is meaningless
+        when it is based on money and glamour at the expense of the solid American
+        values of self-reliance and hard work.\",\n    \"industryIdentifiers\": [\n
+        \    {\n      \"type\": \"ISBN_10\",\n      \"identifier\": \"1904919480\"\n
+        \    },\n     {\n      \"type\": \"ISBN_13\",\n      \"identifier\": \"9781904919483\"\n
+        \    }\n    ],\n    \"pageCount\": 255,\n    \"printType\": \"BOOK\",\n    \"categories\":
+        [\n     \"Fiction\"\n    ],\n    \"averageRating\": 3.5,\n    \"ratingsCount\":
+        3,\n    \"contentVersion\": \"0.0.1.0.preview.1\",\n    \"imageLinks\": {\n
+        \    \"smallThumbnail\": \"http://bks4.books.google.com/books?id=uKnCIdYDTKAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api\",\n
+        \    \"thumbnail\": \"http://bks4.books.google.com/books?id=uKnCIdYDTKAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api\"\n
+        \   },\n    \"language\": \"en\",\n    \"previewLink\": \"http://books.google.com/books?id=uKnCIdYDTKAC&printsec=frontcover&dq=The+Great+Gatsby&hl=&cd=2&source=gbs_api\",\n
+        \   \"infoLink\": \"http://books.google.com/books?id=uKnCIdYDTKAC&dq=The+Great+Gatsby&hl=&source=gbs_api\",\n
+        \   \"canonicalVolumeLink\": \"http://books.google.com/books/about/The_Great_Gatsby_The_Diamont_as_Big_as_t.html?hl=&id=uKnCIdYDTKAC\"\n
+        \  },\n   \"saleInfo\": {\n    \"country\": \"UA\",\n    \"saleability\":
+        \"NOT_FOR_SALE\",\n    \"isEbook\": false\n   },\n   \"accessInfo\": {\n    \"country\":
+        \"UA\",\n    \"viewability\": \"PARTIAL\",\n    \"embeddable\": true,\n    \"publicDomain\":
+        false,\n    \"textToSpeechPermission\": \"ALLOWED\",\n    \"epub\": {\n     \"isAvailable\":
+        false\n    },\n    \"pdf\": {\n     \"isAvailable\": false\n    },\n    \"webReaderLink\":
+        \"http://books.google.com/books/reader?id=uKnCIdYDTKAC&hl=&printsec=frontcover&output=reader&source=gbs_api\",\n
+        \   \"accessViewStatus\": \"SAMPLE\"\n   },\n   \"searchInfo\": {\n    \"textSnippet\":
+        \"In &#39;The Great Gatsby&#39;, Fitzgerald looks deeply into himself and
+        his milieu to create the story of James Gatz, a self-educated nobody from
+        Kentucky who has amassed a fortune and adopted the persona of Jay Gatsby,
+        an Oxford-educated man about ...\"\n   }\n  },\n  {\n   \"kind\": \"books#volume\",\n
+        \  \"id\": \"0yfauGsKOjAC\",\n   \"etag\": \"+lRmwq6e7ns\",\n   \"selfLink\":
+        \"https://www.googleapis.com/books/v1/volumes/0yfauGsKOjAC\",\n   \"volumeInfo\":
+        {\n    \"title\": \"F. Scott Fitzgerald: The Great Gatsby\",\n    \"authors\":
+        [\n     \"F. Scott Fitzgerald\"\n    ],\n    \"publishedDate\": \"1991-08-30\",\n
+        \   \"description\": \"Background information accompanies the story of a young
+        man, newly rich, who tries to recapture the past and win back his former love,
+        despite the fact that she has married\",\n    \"industryIdentifiers\": [\n
+        \    {\n      \"type\": \"ISBN_10\",\n      \"identifier\": \"0521402301\"\n
+        \    },\n     {\n      \"type\": \"ISBN_13\",\n      \"identifier\": \"9780521402309\"\n
+        \    }\n    ],\n    \"pageCount\": 225,\n    \"printType\": \"BOOK\",\n    \"categories\":
+        [\n     \"Literary Criticism\"\n    ],\n    \"averageRating\": 4.0,\n    \"ratingsCount\":
+        4,\n    \"contentVersion\": \"0.1.2.0.preview.1\",\n    \"imageLinks\": {\n
+        \    \"smallThumbnail\": \"http://bks7.books.google.com/books?id=0yfauGsKOjAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api\",\n
+        \    \"thumbnail\": \"http://bks7.books.google.com/books?id=0yfauGsKOjAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api\"\n
+        \   },\n    \"language\": \"en\",\n    \"previewLink\": \"http://books.google.com/books?id=0yfauGsKOjAC&printsec=frontcover&dq=The+Great+Gatsby&hl=&cd=3&source=gbs_api\",\n
+        \   \"infoLink\": \"http://books.google.com/books?id=0yfauGsKOjAC&dq=The+Great+Gatsby&hl=&source=gbs_api\",\n
+        \   \"canonicalVolumeLink\": \"http://books.google.com/books/about/F_Scott_Fitzgerald_The_Great_Gatsby.html?hl=&id=0yfauGsKOjAC\"\n
+        \  },\n   \"saleInfo\": {\n    \"country\": \"UA\",\n    \"saleability\":
+        \"NOT_FOR_SALE\",\n    \"isEbook\": false\n   },\n   \"accessInfo\": {\n    \"country\":
+        \"UA\",\n    \"viewability\": \"PARTIAL\",\n    \"embeddable\": true,\n    \"publicDomain\":
+        false,\n    \"textToSpeechPermission\": \"ALLOWED\",\n    \"epub\": {\n     \"isAvailable\":
+        false\n    },\n    \"pdf\": {\n     \"isAvailable\": false\n    },\n    \"webReaderLink\":
+        \"http://books.google.com/books/reader?id=0yfauGsKOjAC&hl=&printsec=frontcover&output=reader&source=gbs_api\",\n
+        \   \"accessViewStatus\": \"SAMPLE\"\n   },\n   \"searchInfo\": {\n    \"textSnippet\":
+        \"Background information accompanies the story of a young man, newly rich,
+        who tries to recapture the past and win back his former love, despite the
+        fact that she has married\"\n   }\n  },\n  {\n   \"kind\": \"books#volume\",\n
+        \  \"id\": \"klMWVELASj0C\",\n   \"etag\": \"f/GoZz+coNg\",\n   \"selfLink\":
+        \"https://www.googleapis.com/books/v1/volumes/klMWVELASj0C\",\n   \"volumeInfo\":
+        {\n    \"title\": \"F. Scott Fitzgerald's the Great Gatsby\",\n    \"authors\":
+        [\n     \"Harold Bloom\"\n    ],\n    \"publisher\": \"Chelsea House\",\n
+        \   \"publishedDate\": \"2010\",\n    \"industryIdentifiers\": [\n     {\n
+        \     \"type\": \"ISBN_10\",\n      \"identifier\": \"143813276X\"\n     },\n
+        \    {\n      \"type\": \"ISBN_13\",\n      \"identifier\": \"9781438132761\"\n
+        \    }\n    ],\n    \"pageCount\": 182,\n    \"printType\": \"BOOK\",\n    \"averageRating\":
+        3.5,\n    \"ratingsCount\": 8,\n    \"contentVersion\": \"preview-1.0.0\",\n
+        \   \"imageLinks\": {\n     \"smallThumbnail\": \"http://bks8.books.google.com/books?id=klMWVELASj0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api\",\n
+        \    \"thumbnail\": \"http://bks8.books.google.com/books?id=klMWVELASj0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api\"\n
+        \   },\n    \"language\": \"en\",\n    \"previewLink\": \"http://books.google.com/books?id=klMWVELASj0C&printsec=frontcover&dq=The+Great+Gatsby&hl=&cd=4&source=gbs_api\",\n
+        \   \"infoLink\": \"http://books.google.com/books?id=klMWVELASj0C&dq=The+Great+Gatsby&hl=&source=gbs_api\",\n
+        \   \"canonicalVolumeLink\": \"http://books.google.com/books/about/F_Scott_Fitzgerald_s_the_Great_Gatsby.html?hl=&id=klMWVELASj0C\"\n
+        \  },\n   \"saleInfo\": {\n    \"country\": \"UA\",\n    \"saleability\":
+        \"NOT_FOR_SALE\",\n    \"isEbook\": false\n   },\n   \"accessInfo\": {\n    \"country\":
+        \"UA\",\n    \"viewability\": \"PARTIAL\",\n    \"embeddable\": true,\n    \"publicDomain\":
+        false,\n    \"textToSpeechPermission\": \"ALLOWED\",\n    \"epub\": {\n     \"isAvailable\":
+        true,\n     \"acsTokenLink\": \"http://books.google.com/books/download/F_Scott_Fitzgerald_s_the_Great_Gatsby-sample-epub.acsm?id=klMWVELASj0C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api\"\n
+        \   },\n    \"pdf\": {\n     \"isAvailable\": true,\n     \"acsTokenLink\":
+        \"http://books.google.com/books/download/F_Scott_Fitzgerald_s_the_Great_Gatsby-sample-pdf.acsm?id=klMWVELASj0C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api\"\n
+        \   },\n    \"webReaderLink\": \"http://books.google.com/books/reader?id=klMWVELASj0C&hl=&printsec=frontcover&output=reader&source=gbs_api\",\n
+        \   \"accessViewStatus\": \"SAMPLE\"\n   }\n  },\n  {\n   \"kind\": \"books#volume\",\n
+        \  \"id\": \"VdHtDo9jjAsC\",\n   \"etag\": \"iZ6+9OkwsA4\",\n   \"selfLink\":
+        \"https://www.googleapis.com/books/v1/volumes/VdHtDo9jjAsC\",\n   \"volumeInfo\":
+        {\n    \"title\": \"The Great Gatsby\",\n    \"subtitle\": \"Shmoop Literature
+        Guide\",\n    \"authors\": [\n     \"Shmoop\"\n    ],\n    \"publisher\":
+        \"Shmoop University Inc\",\n    \"publishedDate\": \"2010-07-11\",\n    \"description\":
+        \"Take your understanding of The Great Gatsby by F. Scott Fitzgerald to a
+        whole new level, anywhere you go: on a plane, on a mountain, in a canoe, under
+        a tree. Or grab a flashlight and read Shmoop under the covers.Shmoop's award-winning
+        learning guides are now available on your favorite eBook reader. Shmoop eBooks
+        are like a trusted, fun, chatty, expert literature-tour-guide always by your
+        side, no matter where you are (or how late it is at night). You'll find thought-provoking
+        character analyses, quotes, summaries, themes, symbols, trivia, and lots of
+        insightful commentary in Shmoop's literature guides. Teachers and experts
+        from top universities, including Stanford, UC Berkeley, and Harvard have lovingly
+        created these guides to get your brain bubbling.Shmoop is here to make you
+        a better lover of literature and to help you discover connections to other
+        works of literature, history, current events, and pop culture. These interactive
+        study guides will help you discover and rediscover some of the greatest works
+        of all time. For more info, check out http://www.shmoop.com/literature/\",\n
+        \   \"industryIdentifiers\": [\n     {\n      \"type\": \"ISBN_10\",\n      \"identifier\":
+        \"1610622545\"\n     },\n     {\n      \"type\": \"ISBN_13\",\n      \"identifier\":
+        \"9781610622547\"\n     }\n    ],\n    \"printType\": \"BOOK\",\n    \"categories\":
+        [\n     \"Study Aids\"\n    ],\n    \"averageRating\": 5.0,\n    \"ratingsCount\":
+        1,\n    \"contentVersion\": \"preview-1.0.0\",\n    \"imageLinks\": {\n     \"smallThumbnail\":
+        \"http://bks4.books.google.com/books?id=VdHtDo9jjAsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api\",\n
+        \    \"thumbnail\": \"http://bks4.books.google.com/books?id=VdHtDo9jjAsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api\"\n
+        \   },\n    \"language\": \"en\",\n    \"previewLink\": \"http://books.google.com/books?id=VdHtDo9jjAsC&printsec=frontcover&dq=The+Great+Gatsby&hl=&cd=5&source=gbs_api\",\n
+        \   \"infoLink\": \"http://books.google.com/books?id=VdHtDo9jjAsC&dq=The+Great+Gatsby&hl=&source=gbs_api\",\n
+        \   \"canonicalVolumeLink\": \"http://books.google.com/books/about/The_Great_Gatsby.html?hl=&id=VdHtDo9jjAsC\"\n
+        \  },\n   \"saleInfo\": {\n    \"country\": \"UA\",\n    \"saleability\":
+        \"NOT_FOR_SALE\",\n    \"isEbook\": false\n   },\n   \"accessInfo\": {\n    \"country\":
+        \"UA\",\n    \"viewability\": \"PARTIAL\",\n    \"embeddable\": true,\n    \"publicDomain\":
+        false,\n    \"textToSpeechPermission\": \"ALLOWED\",\n    \"epub\": {\n     \"isAvailable\":
+        true,\n     \"acsTokenLink\": \"http://books.google.com/books/download/The_Great_Gatsby-sample-epub.acsm?id=VdHtDo9jjAsC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api\"\n
+        \   },\n    \"pdf\": {\n     \"isAvailable\": true,\n     \"acsTokenLink\":
+        \"http://books.google.com/books/download/The_Great_Gatsby-sample-pdf.acsm?id=VdHtDo9jjAsC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api\"\n
+        \   },\n    \"webReaderLink\": \"http://books.google.com/books/reader?id=VdHtDo9jjAsC&hl=&printsec=frontcover&output=reader&source=gbs_api\",\n
+        \   \"accessViewStatus\": \"SAMPLE\"\n   },\n   \"searchInfo\": {\n    \"textSnippet\":
+        \"These interactive study guides will help you discover and rediscover some
+        of the greatest works of all time. For more info, check out http://www.shmoop.com/literature/\"\n
+        \  }\n  }\n ]\n}\n"
+    http_version: 
+  recorded_at: Sun, 19 May 2013 14:41:46 GMT
+recorded_with: VCR 2.5.0

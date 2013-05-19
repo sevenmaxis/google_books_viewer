@@ -1,0 +1,23 @@
+#content
+  %h3= 'Google Books'
+
+  = form_for 'search', method: :get, url: {action: :index}, html: {:class => 'search-form', size: 50} do |f|
+    = f.text_field :query, :class => 'search-query', value: @query, name: :query
+    = f.submit :search, :class => 'btn'
+
+  %h5= "Found #{@books.count} items"
+
+  %table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= 'Title'
+        %th= 'Author'
+        %th= 'Thumbnail'
+    %tbody
+      - @books.each do |book|
+        %tr
+          %td= book.title
+          %td= book.authors
+          %td= image_tag book.image_link(:zoom => 5, :curl => true)
+
+ = paginate @books
