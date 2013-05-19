@@ -5,9 +5,9 @@
     = f.text_field :query, :class => 'search-query', value: @query, name: :query
     = f.submit :search, :class => 'btn'
 
-  %h5= "Found #{@books.count} items"
+  %h5= "Found #{@total} items"
 
-  %table.table-striped.table-bordered.table-hover
+  %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         %th= 'Title'
