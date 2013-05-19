@@ -5,9 +5,12 @@ class Book
     if result = $redis.get(key)
       result = Marshal.load(result)
     else
-      result = yield.to_a
+      result = yield
+      result = [result.to_a, result.total_items]
       $redis.setex(key, Settings.redis.ttl, Marshal.dump(result))
     end
+    # Format of result
+    # [collections, total_amount]
     result
   end
 end

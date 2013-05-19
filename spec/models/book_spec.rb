@@ -6,39 +6,43 @@ describe Book do
 
     let(:query) { 'The Great Gatsby' }
 
-    let(:books) do 
-      Book.search(query) { GoogleBooks.search(query, { page: 1 }) }
+    before(:each) do
+      $redis.keys.each { |k| $redis.del k }
+      @books, @total_count = Book.search(query) do 
+        GoogleBooks.search(query, { page: 1 })
+      end
     end
-
-    before(:each) { $redis.keys.each { |k| $redis.del k } }
 
     it 'returns array' do
-      books.should be_an(Array)
+      @books.should be_an(Array)
     end
 
-    it "returnss count items" do
-      books.size.should == 5
+    it "returns total count" do
+      @total_count.should == 523
+    end
+
+    it "returns count items" do
+      @books.size.should == 5
     end
 
     it "returns a title" do
-      books.first.title.should == 'The Great Gatsby'
+      @books.first.title.should == 'The Great Gatsby'
     end
 
     it "returns an authors" do
-      books.first.authors.should == "F.Scott Fitzgerald"
+      @books.first.authors.should == "F.Scott Fitzgerald"
     end
 
     it "returns image link" do
       image_link = "http://bks2.books.google.com/books?id=JgxOs2GX86AC&printsec=frontcover&img=1&zoom=1&edge=none&source=gbs_api"
-      books.first.image_link.should == image_link
+      @books.first.image_link.should == image_link
     end
 
     it "returns page count" do
-      books.first.page_count.should == 154
+      @books.first.page_count.should == 154
     end
 
     it "should use cache" do
-      books # to initialize the books variable
       GoogleBooks.should_not_receive(:search)
       Book.search(query)
     end

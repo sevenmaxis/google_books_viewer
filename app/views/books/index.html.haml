@@ -20,4 +20,4 @@
           %td= book.authors
           %td= image_tag book.image_link(:zoom => 5, :curl => true)
 
- = paginate @books
+  = paginate @books, :theme => 'twitter-bootstrap'

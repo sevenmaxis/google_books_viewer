@@ -1,4 +1,4 @@
 redis:
-  host: 'redis://localhost'
+  host: 'localhost'
   port: 6379
   ttl: 100

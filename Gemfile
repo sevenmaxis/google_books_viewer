@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'redis'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem "rails_config"
 gem "twitter-bootstrap-rails"
 gem 'haml-rails'
