@@ -7,6 +7,7 @@ gem "rails_config"
 gem "twitter-bootstrap-rails"
 gem 'haml-rails'
 gem 'googlebooks'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

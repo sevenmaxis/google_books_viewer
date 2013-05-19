@@ -10,7 +10,7 @@ describe Book do
       Book.search(query) { GoogleBooks.search(query, { page: 1 }) }
     end
 
-    after(:each) { $redis.keys.each { |k| $redis.del k } }
+    before(:each) { $redis.keys.each { |k| $redis.del k } }
 
     it 'returns array' do
       books.should be_an(Array)

@@ -5,9 +5,9 @@ class BooksController < ApplicationController
     @query, page = params[:query], params[:page]
     
     @books = Book.search(@query, page) do
-      GoogleBooks.search(@query, { page: page })
+      GoogleBooks.search(@query, { page: page.to_i })
     end
-
-    respond_to @books
+    
+    respond_with @books
   end
 end
