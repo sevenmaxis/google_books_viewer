@@ -1,4 +1,9 @@
 #content
+  - flash.each do |key, value|
+    %div{:class => "alert #{flash_class(key)}"}
+      %button.close{"data-dismiss" => "alert", :type => "button"} ×
+      = value
+
   %h3= 'Google Books'
 
   = form_for 'search', method: :get, url: {action: :index}, html: {:class => 'search-form', size: 50} do |f|

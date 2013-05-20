@@ -6,6 +6,8 @@ class Book
       result = Marshal.load(result)
     else
       result = yield
+      Rails.logger.debug "-"*5
+      Rails.logger.debug result.inspect
       result = [result.to_a, result.total_items]
       $redis.setex(key, Settings.redis.ttl, Marshal.dump(result))
     end
