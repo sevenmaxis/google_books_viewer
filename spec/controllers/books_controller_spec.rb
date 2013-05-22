@@ -15,8 +15,12 @@ describe BooksController, vcr: { cassette_name: 'Book' } do
     end
 
     it "calls GoogleBooks wraper library" do
-      result = double.as_null_object
-      GoogleBooks.should_receive(:search).with(query, {:page=>page}).and_return(result)
+      options = { 
+        page: page, :api_key => Settings.api_key, :count => Settings.items_per_page
+      }
+      GoogleBooks.should_receive(:search)
+        .with(query, options, "0.0.0.0")
+        .and_return(double.as_null_object)
       get :index, :query => query, :page => page
     end
   end
@@ -26,14 +30,14 @@ describe BooksController, vcr: { cassette_name: 'Book' } do
     before { require 'benchmark' }
 
     it 'takes time' do
-      count = 5000
+      count = 10000
       time = Benchmark.realtime {
         count.times { get :index, :query => query, :page => page }
       }
       puts "\n" + "-"*50
       puts "it took #{time} seconds to make #{count} requests"
       puts "-"*50
-      time.should < 30
+      time.should < 60
     end
   end
 end
