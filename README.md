@@ -1,6 +1,8 @@
 google_books_viewer
 ===================
 
+The application uses the Redis for caching, what allows to serve about 10k requests per minute.
+
 To run the application on local host:
 
 1. git clone https://github.com/sevenmaxis/google_books_viewer.git
@@ -15,5 +17,3 @@ To see the perfomance of application run this command:
 ```ruby
 rspec --tag performance
 ```
-
-On my computer it makes 5000 requests in less then 30 seconds
