@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   caches_action :index
-  
+
   respond_to :html
 
   def index
@@ -39,7 +39,6 @@ class BooksController < ApplicationController
 
     logger.info "  total items: #{@total}, page: #{page}"
 
-    @books = Kaminari.paginate_array(@books, total_count: @total-1).page(page).per(Settings.per_page)
-    respond_with @books
+    respond_with Kaminari.paginate_array(@books, total_count: @total).page(page).per(Settings.per_page)
   end
 end
