@@ -21,7 +21,7 @@ describe BooksController, vcr: { cassette_name: 'Book' } do
     end
   end
 
-  describe "performance" do
+  describe "performance", :performance => true do
 
     before { require 'benchmark' }
 
@@ -30,7 +30,7 @@ describe BooksController, vcr: { cassette_name: 'Book' } do
       time = Benchmark.realtime {
         count.times { get :index, :query => query, :page => page }
       }
-      puts "-"*50
+      puts "\n" + "-"*50
       puts "it took #{time} seconds to make #{count} requests"
       puts "-"*50
       time.should < 30
