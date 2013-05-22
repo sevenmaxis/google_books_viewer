@@ -1,11 +1,11 @@
-if Rails.env == "production"
+if Rails.env == "production_"
   uri = URI.parse(ENV['REDISTOGO_URL'])
   $redis = Redis.new( host:     uri.host,
                       port:     uri.port,
-                      passowrd: uri.passowrd)
+                      password: uri.password)
 else
   $redis = Redis.new( host:     Settings.redis.host, 
                       port:     Settings.redis.port,
-                      passowrd: Settings.redis.passowrd )
+                      password: Settings.redis.password )
 end
 
