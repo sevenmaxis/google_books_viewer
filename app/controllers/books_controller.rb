@@ -39,6 +39,7 @@ class BooksController < ApplicationController
 
     logger.info "  total items: #{@total}, page: #{page}"
 
-    respond_with Kaminari.paginate_array(@books, total_count: @total).page(page).per(Settings.per_page)
+    @books = Kaminari.paginate_array(@books, total_count: @total).page(page).per(Settings.per_page)
+    respond_with @books
   end
 end
