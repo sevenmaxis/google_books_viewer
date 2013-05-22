@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  caches_action :index
+  
   respond_to :html
 
   def index
