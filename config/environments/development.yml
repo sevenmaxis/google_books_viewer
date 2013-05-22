@@ -3,7 +3,10 @@ redis:
   port: 6379
   ttl: 100
 
-api_key: AIzaSyCtrnYwnk5b7ea07X2ykQ128Do97SzCPKw
+#api_key: AIzaSyCtrnYwnk5b7ea07X2ykQ128Do97SzCPKw
+api_key: AIzaSyCjZRCUIUJXEMXv35fXNUC7xTN6hwVrxug
 
-items_per_page: 10
+per_page: 10
+
+ip: '78.47.116.164'
 

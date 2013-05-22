@@ -15,11 +15,9 @@ describe BooksController, vcr: { cassette_name: 'Book' } do
     end
 
     it "calls GoogleBooks wraper library" do
-      options = { 
-        page: page, :api_key => Settings.api_key, :count => Settings.items_per_page
-      }
+      options = { page: page, :count => Settings.per_page }
       GoogleBooks.should_receive(:search)
-        .with(query, options, "0.0.0.0")
+        .with(query, options, Settings.ip)
         .and_return(double.as_null_object)
       get :index, :query => query, :page => page
     end

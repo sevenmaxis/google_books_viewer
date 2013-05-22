@@ -2,11 +2,11 @@ class Book
 
   def self.search(query, page=1)
     key = "#{query}:#{page}"
+    
     if result = $redis.get(key)
       result = Marshal.load(result)
     else
       result = yield
-      #require 'debugger'; debugger
       result = [result.to_a, result.total_items]
       $redis.setex(key, Settings.redis.ttl, Marshal.dump(result))
     end
