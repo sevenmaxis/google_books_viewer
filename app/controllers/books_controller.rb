@@ -8,16 +8,15 @@ class BooksController < ApplicationController
     @books, @total = Book.search(@query, page) do
       # walkaround for GoogleBooks gem
       # calling 'to_a' on emtpy collection raises an exception
-      result = GoogleBooks.search(@query, { page: page })
+      result = GoogleBooks.search(@query, { page: page }, request.remote_ip)
       begin
         result.to_a
       rescue NoMethodError => e
         if e.message == "undefined method `each' for nil:NilClass"
-          Object.new.tap do |object|
-            class << object
-              def to_a;        0                  end
-              def total_items; result.total_items end
-            end
+          logger.info "GoogleBooks' error, the empty collection raises an exception"
+          OpenStruct.new.tap do |os|
+            os.to_a        = 0
+            os.total_items = result.total_items
           end
         else
           raise e
