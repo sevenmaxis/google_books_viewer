@@ -1,8 +1,3 @@
-redis:
-  host: 'localhost'
-  port: 6379
-  ttl: 100
-
 #api_key: AIzaSyCtrnYwnk5b7ea07X2ykQ128Do97SzCPKw
 api_key: AIzaSyCjZRCUIUJXEMXv35fXNUC7xTN6hwVrxug
 

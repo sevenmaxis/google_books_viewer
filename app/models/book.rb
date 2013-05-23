@@ -3,15 +3,13 @@ class Book
   def self.search(query, page=1)
     key = "#{query}:#{page}"
     
-    if result = $redis.get(key)
-      result = Marshal.load(result)
-    else
+    unless result = Rails.cache.read(key)
       result = yield
-      result = [result.to_a, result.total_items]
-      $redis.setex(key, Settings.redis.ttl, Marshal.dump(result))
-    end
+      result = [result.to_a, result.total_items, DateTime.current]
+      Rails.cache.write(key, result)
+    end    
     # Format of result
-    # [collections, total_items]
+    # [collections, total_items, time]
     result
   end
 end

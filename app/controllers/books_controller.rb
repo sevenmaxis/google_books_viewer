@@ -1,12 +1,11 @@
 class BooksController < ApplicationController
-  caches_action :index
 
   respond_to :html
 
   def index
     @query, page = (params[:query] || 'The Great Gatsby'), (params[:page] || 1).to_i
 
-    @books, @total = Book.search(@query, page) do
+    @books, @total, time = Book.search(@query, page) do
 
       retried = false
 
@@ -26,7 +25,8 @@ class BooksController < ApplicationController
           
           unless retried
             retried = true
-            page = (result.total_items - 1) / Settings.per_page + 1
+            max_page = (result.total_items - 1) / Settings.per_page + 1
+            page = max_page if page > max_page
             retry
           else
             raise e
@@ -37,9 +37,10 @@ class BooksController < ApplicationController
       result
     end
 
-    logger.info "  total items: #{@total}, page: #{page}"
-
     @books = Kaminari.paginate_array(@books, total_count: @total).page(page).per(Settings.per_page)
-    respond_with @books
+
+    fresh_when :etag => etag_for(@books, :layout => 'application.html.haml', :view => 'books/index.html.haml'), 
+               :last_modified => time, 
+               :public => true
   end
 end

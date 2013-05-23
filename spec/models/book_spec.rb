@@ -7,7 +7,7 @@ describe Book do
     let(:query) { 'The Great Gatsby' }
 
     before(:each) do
-      $redis.keys.each { |k| $redis.del k }
+      Rails.cache.clear
       @books, @total_count = Book.search(query) do 
         GoogleBooks.search(query, { page: 1 })
       end

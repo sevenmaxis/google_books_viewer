@@ -5,7 +5,7 @@ describe BooksController, vcr: { cassette_name: 'Book' } do
   let(:query) { 'The Great Gatsby' }
   let(:page) { 5 }
 
-  before(:each) { $redis.keys.each { |k| $redis.del k } }
+  before(:each) { Rails.cache.clear }
     
   describe "GET index" do
 
