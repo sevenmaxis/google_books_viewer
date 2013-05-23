@@ -36,10 +36,10 @@ class BooksController < ApplicationController
       result
     end
 
-    @books = Kaminari.paginate_array(@books, total_count: @total).page(page).per(Settings.per_page)
+    args =[@books, total_count: @total]
+    @books = Kaminari.paginate_array(*args).page(page).per(Settings.per_page)
 
-    fresh_when etag: etag_for(@books, layout: 'application.html.haml', view: 'books/index.html.haml'), 
-               :last_modified => time, 
-               :public => true
+    args = [@books, layout: 'application.html.haml', view: 'books/index.html.haml']
+    fresh_when etag: etag_for(*args), :last_modified => time, :public => true
   end
 end
