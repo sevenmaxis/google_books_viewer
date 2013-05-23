@@ -10,6 +10,7 @@ gem 'googlebooks'
 gem 'thin'
 gem 'etag_for'
 gem 'dalli'
+gem 'memcachier'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
