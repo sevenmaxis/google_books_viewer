@@ -15,21 +15,20 @@ class BooksController < ApplicationController
       # from privous request, but now we know the correct count
       begin
         options = { page: page, :count => Settings.per_page }
-        result = GoogleBooks.search(@query, options, Settings.ip)
-        result.to_a
+        (result = GoogleBooks.search(@query, options, Settings.ip)).to_a
 
       rescue NoMethodError => e
         
         if e.message == "undefined method `each' for nil:NilClass"
           logger.fatal "GoogleBooks' error, the empty collection raises an exception"
           
-          unless retried
+          if retried
+            raise e            
+          else
             retried = true
             max_page = (result.total_items - 1) / Settings.per_page + 1
             page = max_page if page > max_page
             retry
-          else
-            raise e
           end
         end
       end
@@ -39,7 +38,7 @@ class BooksController < ApplicationController
 
     @books = Kaminari.paginate_array(@books, total_count: @total).page(page).per(Settings.per_page)
 
-    fresh_when :etag => etag_for(@books, :layout => 'application.html.haml', :view => 'books/index.html.haml'), 
+    fresh_when etag: etag_for(@books, layout: 'application.html.haml', view: 'books/index.html.haml'), 
                :last_modified => time, 
                :public => true
   end

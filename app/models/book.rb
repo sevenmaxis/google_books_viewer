@@ -9,7 +9,7 @@ class Book
       Rails.cache.write(key, result)
     end    
     # Format of result
-    # [collections, total_items, time]
+    # [collection, total_items, time]
     result
   end
 end
